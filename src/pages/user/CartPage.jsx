@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CartItem from "@/components/user/cart/cartItem";
+import CartItem from "@/components/user/cart/CartItem";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";

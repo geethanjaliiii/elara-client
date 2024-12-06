@@ -14,9 +14,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { usePayment } from '@/hooks/usePayment'
 import { retryPayment } from '@/services/razorpay'
-import { format } from "date-fns";
 
-const RatingDialog = React.lazy(() => import('@/components/shared/RatingDialouge'))
 
 export default function Orders() {
   const userId = useSelector((state) => state?.user?.userInfo?._id)
