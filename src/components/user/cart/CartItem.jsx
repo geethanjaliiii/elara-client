@@ -106,13 +106,11 @@ const CartItem = ({ cartItems, updateQuantity, removeItem }) => {
                        
                       </div>
                     </div>
-                  ) : selectedSize?(
+                  ) :(
                     <p className="text-sm font-medium text-destructive">
                       Out Of Stock
                     </p>
-                  ):<p className="text-sm font-medium text-destructive">
-                   Currently Unavailable.
-                </p>}
+                  )}
                  
                 </div>
               </CardContent>
