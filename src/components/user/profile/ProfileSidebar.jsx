@@ -123,7 +123,7 @@ function ProfileSidebar({ user, activeItem, onNavigate }) {
           <CardContent className="p-4">
             {renderNavItems()}
             <Separator className="my-4" />
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <Button variant="ghost" className="w-full justify-start text-amber-600">
                 <AlertCircle className="mr-2 h-4 w-4" />
                 Deactivate Account
@@ -132,7 +132,7 @@ function ProfileSidebar({ user, activeItem, onNavigate }) {
                 <Trash2 className="mr-2 h-4 w-4" />
                 Delete Account
               </Button>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </div>
