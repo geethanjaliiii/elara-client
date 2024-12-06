@@ -1,8 +1,8 @@
 // // Modal.js
-// import React from 'react';
+import React from 'react';
 // import { Button } from "@/components/ui/button";
 
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 // export function Modal({ isOpen, onClose, children }) {
 //   if (!isOpen) return null;
