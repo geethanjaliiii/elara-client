@@ -87,7 +87,7 @@ function ProfileSidebar({ user, activeItem, onNavigate }) {
             </SheetHeader>
             <div className="mt-4 space-y-4">
               {renderNavItems()}
-              <Separator className="my-4" />
+              {/* <Separator className="my-4" />
               <div className="space-y-2">
                 <Button variant="ghost" className="w-full justify-start text-amber-600">
                   <AlertCircle className="mr-2 h-4 w-4" />
@@ -97,7 +97,7 @@ function ProfileSidebar({ user, activeItem, onNavigate }) {
                   <Trash2 className="mr-2 h-4 w-4" />
                   Delete Account
                 </Button>
-              </div>
+              </div> */}
             </div>
           </SheetContent>
         </Sheet>
@@ -122,7 +122,7 @@ function ProfileSidebar({ user, activeItem, onNavigate }) {
         <Card>
           <CardContent className="p-4">
             {renderNavItems()}
-            <Separator className="my-4" />
+            {/* <Separator className="my-4" /> */}
             {/* <div className="space-y-2">
               <Button variant="ghost" className="w-full justify-start text-amber-600">
                 <AlertCircle className="mr-2 h-4 w-4" />
