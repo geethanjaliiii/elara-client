@@ -35,7 +35,7 @@ const ErrorPage = lazy(() => import("./pages/404page"));
 const ForgetPasswordPage = lazy(() => import("./pages/user/auth/ForgetPasswordPage"));
 const WishlistPage=lazy(()=>import('./pages/user/WishlistPage.jsx'))
 // Import protection components normally since they're lightweight
-import IsAdminLogin from "./store/protect/isAdminLogin";
+import IsAdminLogin from "./store/protect/IsAdminLogin.jsx";
 import IsAdminLogout from "./store/protect/IsAdminLogout";
 import IsUserLogout from "./store/protect/IsUserLogout";
 import IsUserLogin from "./store/protect/IsUserLogin";
