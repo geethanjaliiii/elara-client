@@ -108,7 +108,7 @@ const handleRetryPayment=(order)=>{
 
       <div className="grid gap-6 ">
         <div className="space-y-4">
-          <div className="flex gap-2">
+          {/* <div className="flex gap-2">
             <div className="relative flex-1">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
@@ -121,7 +121,7 @@ const handleRetryPayment=(order)=>{
             <FilterSheet>
               <FilterContent/>
             </FilterSheet>
-          </div>
+          </div> */}
 
           <ScrollArea className="h-[calc(100vh-200px)]">
             <div className="space-y-6">
