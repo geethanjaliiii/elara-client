@@ -148,6 +148,9 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
                  <SelectItem value="Work">Work</SelectItem>
                </SelectContent>
              </Select>
+             {touched.addressType && errors.addressType && (
+               <p className="text-sm text-red-500">{errors.addressType}</p>
+             )}
            </div>
            <div className="flex items-center space-x-2">
              <input
@@ -160,6 +163,7 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
              />
              <Label htmlFor="isDefault">Set as default address</Label>
            </div>
+          
          </div>
 
          <div className="flex justify-end space-x-2">
