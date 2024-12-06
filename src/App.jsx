@@ -7,20 +7,20 @@ import { CouponProvider } from "@/context/CouponContext";
 //auth
 const UserSignup = lazy(() => import("./pages/user/auth/UserSignup"));
 const UserLogin = lazy(() => import("./pages/user/auth/UserLogin"));
-const AdminLoginPage = lazy(() => import("./pages/admin/adminLoginPage"));
+const AdminLoginPage = lazy(() => import("./pages/admin/AdminLoginPage"));
 //admin
 const Customers = lazy(() => import("./components/admin/Customers"));
-const Categories = lazy(() => import("./components/admin/categories/Categories.jsx"));
+const Categories = lazy(() => import("./components/admin/categories/Categories"));
 const DashboardLayout = lazy(() => import("./pages/admin/DashboardLayout"));
-const AddCategory = lazy(() => import("./components/admin/categories/AddCategory.jsx"));
+const AddCategory = lazy(() => import("./components/admin/categories/AddCategory"));
 const EditCategory = lazy(() => import("./components/admin/categories/EditCategory"));
 const AddProduct = lazy(() => import("./components/admin/products/AddProduct"));
-const Products = lazy(() => import("./components/admin/products/Products.jsx"));
+const Products = lazy(() => import("./components/admin/products/Products"));
 const EditProduct = lazy(() => import("./components/admin/products/EditProduct"));
-const Coupons =lazy(()=>import("./components/admin/coupons/coupons.jsx")) ;
-const AddCoupon =lazy(()=>import("./components/admin/coupons/addCoupons.jsx")) ;
+const Coupons =lazy(()=>import("./components/admin/coupons/coupons")) ;
+const AddCoupon =lazy(()=>import("./components/admin/coupons/addCoupons")) ;
 const AdminOrders = lazy(() => import("./components/admin/orders/Orders"));
-const OfferManagement=lazy(()=>import('./components/admin/offers/OfferManagement.jsx'))
+const OfferManagement=lazy(()=>import('./components/admin/offers/OfferManagement'))
 //users
 import LandingPage from "./pages/user/LandingPage.jsx";
 import ShopPage from "./pages/user/ShopPage.jsx";
