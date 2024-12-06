@@ -16,7 +16,7 @@ import toast, { Toaster } from "react-hot-toast";
 export function AddressForm({ initialValues, onSubmit, onCancel }) {
   console.log("address for editing", initialValues);
   const[error,setError]=useState('')
-  function handleSubmit(values, errors,{ setSubmitting }) {
+  function handleSubmit(values, { setSubmitting }) {
     // const firstErrorField = document.querySelector(".text-red-500");
     // if (firstErrorField) {
     //   firstErrorField.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -24,14 +24,16 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
     //   onSubmit(values);
     // }
     // setSubmitting(false);
-    const errorsArray = Object.keys(errors).map((key) => errors[key]);
-    if (errorsArray.length > 0) {
-      toast.error(errorsArray[0]); // Show the first error
-      setError(errorsArray[0])
-      setSubmitting(false);
-      return;
+    try {
+      // Example: Perform API call or other logic
+      onSubmit(values);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Please fill out all the fields properly!");
+    } finally {
+      setSubmitting(false); // Ensure `setSubmitting` is always reset
     }
-    onSubmit(values);
+    
   }
   return (
     <>
@@ -207,9 +209,11 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
               <Button type="submit" disabled={isSubmitting}>
                 Save Address
               </Button>
-              {error && (
-                <p className="text-sm text-red-500">{error}</p>
-              )}
+              {Object.keys(errors).length > 0 && (
+          <p className="text-sm text-red-500">
+            {errors[Object.keys(errors)[0]]}
+          </p>
+        )}
             </div>
           </Form>
         )}
