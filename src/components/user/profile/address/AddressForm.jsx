@@ -209,12 +209,13 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
               <Button type="submit" disabled={isSubmitting}>
                 Save Address
               </Button>
-              {Object.keys(errors).length > 0 && (
+          
+            </div>
+            {Object.keys(errors).length > 0 && (
           <p className="text-sm text-red-500">
             {errors[Object.keys(errors)[0]]}
           </p>
         )}
-            </div>
           </Form>
         )}
       </Formik>
