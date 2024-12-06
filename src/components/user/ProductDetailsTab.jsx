@@ -22,7 +22,7 @@ export default function ProductDetailsTabs({ description, reviews }) {
           <TabsContent value="reviews">
             <CustomerFeedback reviews={reviews} />
             <ReviewList reviews={reviews} />
-            <WriteReview />
+            {/* <WriteReview /> */}
           </TabsContent>
         </CardContent>
       </Tabs>

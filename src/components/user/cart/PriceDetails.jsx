@@ -203,7 +203,7 @@ const PriceDetails = ({ cart, step, handlePlaceOrder,checkLimit}) => {
               </div>
             </div>
 
-            {step && (
+            {step ? (
               <Button
                 className="mt-6 w-full"
                 size="lg"
@@ -212,7 +212,13 @@ const PriceDetails = ({ cart, step, handlePlaceOrder,checkLimit}) => {
               >
                 {step === "address" ? "CONTINUE" : "PLACE ORDER"}
               </Button>
-            )}
+            ):(<Button
+              className="mt-6 w-full"
+              size="lg"
+              disabled={true}
+              >
+              Click Deliver Here
+            </Button>)}
 
             <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
               <ShieldCheck className="h-4 w-4" />
