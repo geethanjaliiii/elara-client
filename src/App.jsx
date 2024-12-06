@@ -39,7 +39,7 @@ import IsAdminLogin from "./store/protect/IsAdminLogin.jsx";
 import IsAdminLogout from "./store/protect/IsAdminLogout";
 import IsUserLogout from "./store/protect/IsUserLogout";
 import IsUserLogin from "./store/protect/IsUserLogin";
-import Wallet from "./components/user/wallet/Wallet.jsx";
+import Wallet from "./components/user/wallet/wallet.jsx";
 import SalesReport from "./components/admin/sales/SalesReport.jsx";
 import Dashboard from "./components/admin/dashboard/Dashboard.jsx";
 import Wishlist from "./components/user/whishlist/wishlist.jsx";
