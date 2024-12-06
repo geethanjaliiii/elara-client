@@ -15,12 +15,13 @@ import toast, { Toaster } from "react-hot-toast";
 
 export function AddressForm({ initialValues, onSubmit, onCancel }) {
   console.log("address for editing", initialValues);
+  const[error,setError]=useState('')
   function handleSubmit(values, { setSubmitting }) {
     const hasErrors = Object.values(values).some(
       (value) => value == "" || value == null
     );
     if (hasErrors) {
-      toast.error("Please fill out all required fields.");
+      setError("Please fill out all required fields.");
       setSubmitting(false);
       return;
     }
@@ -195,10 +196,12 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
               <Button type="button" variant="outline" onClick={onCancel}>
                 Cancel
               </Button>
+              
               <Button type="submit" disabled={isSubmitting}>
                 Save Address
               </Button>
             </div>
+            {error && <p className="text-sm text-red-500">{error}</p>}
           </Form>
         )}
       </Formik>
