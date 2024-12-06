@@ -56,35 +56,6 @@ const PriceDetails = ({ cart, step, handlePlaceOrder,checkLimit}) => {
     
   };
 
-  // const handleClick = () => {
-  //   console.log('status',checkStock());
-    
-  //   if (step === "bag") {
-  //     if (checkStock()) {
-  //       fetchCart()
-  //       navigate("/checkout/address");
-  //     } else {
-  //       toast.error("Stock limit exceeded!");
-  //     }
-  //   } else if (step === "address") {
-  //     if (checkStock()) {
-  //       fetchCart()
-  //       navigate("/checkout/payment");
-  //     } else {
-  //       toast.error("Stock limit exceeded!");
-  //     }
-  //   } else if (step === "payment") {
-      
-  //     if (checkStock()) {
-  //       fetchCart()
-  //       console.log('coupon code',couponCode);
-        
-  //       handlePlaceOrder(couponCode,couponDiscount);
-  //     } else {
-  //       toast.error("Stock limit exceeded!");
-  //     }
-  //   }
-  // };
 
  const handleClick =async () => {
     

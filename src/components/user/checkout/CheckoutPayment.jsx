@@ -48,6 +48,10 @@ export default function CheckoutPayment() {
       } else if (wallet.balance < amount) {
         return true;
       }
+    }else if(selectedPayment=='Cash On Delivery'){
+      if(amount>1000){
+        return true
+      }
     }
     return false;
   }
@@ -177,6 +181,7 @@ export default function CheckoutPayment() {
           step={"payment"}
           handlePlaceOrder={handlePlaceOrder}
           checkLimit={checkLimit}
+         
         />
       )}
     </div>
