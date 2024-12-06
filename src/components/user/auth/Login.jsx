@@ -59,7 +59,7 @@ const Login = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <Toaster />
-      <main className="container mx-auto px-4 sm:mt-8 lg:px-11 py-8 md:py-12 flex flex-col md:flex-row items-center justify-center">
+      <main className="container sm:py-16 mx-auto px-4 sm:mt-8 lg:px-11 py-8 md:py-12 flex flex-col md:flex-row items-center justify-center">
         <div
           className="md:w-1/4 hidden md:block bg-cover bg-center h-full rounded-lg shadow-lg"
           style={{
