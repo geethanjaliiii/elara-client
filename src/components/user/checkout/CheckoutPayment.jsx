@@ -108,6 +108,8 @@ export default function CheckoutPayment() {
       } else if (wallet.balance < totalAmount) {
         return toast.error("Insufficient wallet balance.");
       }
+    }else if(selectedPayment=='Cash On Delivery' && checkLimit(totalAmount)){
+      return toast.error("Cash on Delivery not available for order above 1000.")
     }
 
     const items = cart.items
