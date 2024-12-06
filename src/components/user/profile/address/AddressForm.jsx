@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { Formik, Form } from "formik";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +15,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 export function AddressForm({ initialValues, onSubmit, onCancel }) {
   console.log("address for editing", initialValues);
-  const[error,setError]=useState('')
+  // const[error,setError]=useState('')
   function handleSubmit(values, { setSubmitting }) {
     const firstErrorField = document.querySelector(".text-red-500");
     if (firstErrorField) {
@@ -209,7 +209,6 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
                 Save Address
               </Button>
             </div>
-            {error && <p className="text-sm text-red-500">{error}</p>}
           </Form>
         )}
       </Formik>
