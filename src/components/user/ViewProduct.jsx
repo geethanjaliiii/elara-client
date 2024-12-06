@@ -117,8 +117,8 @@ try {
 
         <div className="space-y-2">
           <ProductInfo
-            name={product.name || "N/A"}
-            discount={product.discount || "Not available"}
+            name={product.name || ""}
+            discount={product.discount || 0}
             price={selectedSize.price || 0}
             rating={product.rating || 0}
             reviews={product.reviews || []}
