@@ -1,7 +1,7 @@
 import Footer from '@/components/shared/Footer'
 import Navbar from '@/components/shared/Navbar'
 import OurStory from '@/components/user/ourStory/OurStory'
-import { ParallaxBackground } from '@/components/user/ourStory/parallax'
+import { ParallaxBackground } from '@/components/user/ourStory/Parallax'
 
 export default function OurStoryPage() {
   return (
