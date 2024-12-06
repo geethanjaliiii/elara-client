@@ -15,24 +15,23 @@ import toast, { Toaster } from "react-hot-toast";
 
 export function AddressForm({ initialValues, onSubmit, onCancel }) {
   console.log("address for editing", initialValues);
-  // const[error,setError]=useState('')
+  const[error,setError]=useState('')
   function handleSubmit(values, { setSubmitting }) {
-    const firstErrorField = document.querySelector(".text-red-500");
-    if (firstErrorField) {
-      firstErrorField.scrollIntoView({ behavior: "smooth", block: "center" });
-    } else {
-      onSubmit(values);
-    }
-    setSubmitting(false);
-    // const hasErrors = Object.values(values).some(
-    //   (value) => value == "" || value == null
-    // );
-    // if (hasErrors) {
-    //   setError("Please fill out all required fields.");
-    //   setSubmitting(false);
-    //   return;
+    // const firstErrorField = document.querySelector(".text-red-500");
+    // if (firstErrorField) {
+    //   firstErrorField.scrollIntoView({ behavior: "smooth", block: "center" });
+    // } else {
+    //   onSubmit(values);
     // }
-    // onSubmit(values); 
+    // setSubmitting(false);
+    const errorsArray = Object.keys(errors).map((key) => errors[key]);
+    if (errorsArray.length > 0) {
+      toast.error(errorsArray[0]); // Show the first error
+      setError(errorsArray[0])
+      setSubmitting(false);
+      return;
+    }
+    onSubmit(values);
   }
   return (
     <>
@@ -208,6 +207,9 @@ export function AddressForm({ initialValues, onSubmit, onCancel }) {
               <Button type="submit" disabled={isSubmitting}>
                 Save Address
               </Button>
+              {error && (
+                <p className="text-sm text-red-500">{error}</p>
+              )}
             </div>
           </Form>
         )}
