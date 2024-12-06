@@ -54,7 +54,7 @@ export function CategoryOfferManagement({ categoryOffers, onAddOffer }) {
   }
   useEffect(() => {
     fetchCategories();
-  }, []);
+  }, [categories]);
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -190,13 +190,13 @@ export function CategoryOfferManagement({ categoryOffers, onAddOffer }) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {categoryOffers.length>0 && categoryOffers.map((offer) => (
+              {categoryOffers.length>0 && categoryOffers && categoryOffers.map((offer) => (
                 <TableRow key={offer._id}>
                   <TableCell>{offer?.targetId?.name||''}</TableCell>
-                  <TableCell>{offer.name}</TableCell>
-                  <TableCell>{offer.offerValue}%</TableCell>
-                  <TableCell>{offer.startDate}</TableCell>
-                  <TableCell>{offer.endDate}</TableCell>
+                  <TableCell>{offer?.name||''}</TableCell>
+                  <TableCell>{offer?.offerValue||0}%</TableCell>
+                  <TableCell>{offer?.startDate||''}</TableCell>
+                  <TableCell>{offer?.endDate||''}</TableCell>
                   {/* <TableCell>
                   <Switch
                     checked={offer.isActive}
