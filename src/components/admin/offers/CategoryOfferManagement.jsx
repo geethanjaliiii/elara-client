@@ -54,7 +54,7 @@ export function CategoryOfferManagement({ categoryOffers, onAddOffer }) {
   }
   useEffect(() => {
     fetchCategories();
-  }, [categories]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -72,6 +72,7 @@ export function CategoryOfferManagement({ categoryOffers, onAddOffer }) {
     }
   
     onAddOffer(offerData)
+    fetchCategories()
     // Reset form fields
     setIsDialogOpen(false)
     setSelectedCategory(null)
@@ -190,8 +191,8 @@ export function CategoryOfferManagement({ categoryOffers, onAddOffer }) {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {categoryOffers.length>0 && categoryOffers && categoryOffers.map((offer) => (
-                <TableRow key={offer._id}>
+              {categoryOffers.length>0 && categoryOffers && categoryOffers.map((offer,index) => (
+                <TableRow key={offer?._id||index}>
                   <TableCell>{offer?.targetId?.name||''}</TableCell>
                   <TableCell>{offer?.name||''}</TableCell>
                   <TableCell>{offer?.offerValue||0}%</TableCell>
