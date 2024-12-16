@@ -1,8 +1,9 @@
 import { PackageX, RefreshCw, Home } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function NoProducts() {
+  const navigate=useNavigate()
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="text-center">
@@ -12,7 +13,7 @@ export default function NoProducts() {
           We couldn't find any products matching your criteria.
         </p>
         <div className="mt-6 flex justify-center space-x-4">
-          <Button onClick={() => window.location.reload()} variant="outline">
+          <Button onClick={() => navigate("/shop")} variant="outline">
             <RefreshCw className="mr-2 h-4 w-4" />
             Refresh Page
           </Button>
