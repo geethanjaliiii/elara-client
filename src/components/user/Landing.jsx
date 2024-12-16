@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "../shared/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimate";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ReferralModal } from "./referalCode/ReferalModal";
 import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
@@ -301,7 +301,7 @@ export default function EvaraLandingPage() {
             transition={{ duration: 0.5 }}
           >
             <Image
-              src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1734364627/Brown_Minimalist_Skincare_Ingredient_Definition_Business_Instagram_Post_z7ktfh.png"
+              src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1734365539/Brown_Minimalist_Skincare_Ingredient_Definition_Business_Instagram_Post_1_rzdhi6.png"
               alt="Natural ingredients"
               width={500}
               height={500}
@@ -326,7 +326,7 @@ export default function EvaraLandingPage() {
               className="w-fit transition-transform hover:scale-105 bg-black text-white hover:bg-gray-800 text-sm sm:text-base"
               asChild
             >
-              <Link href="/our-story">Discover Our Ingredients</Link>
+              <Link to="/our-story">Discover Our Ingredients</Link>
             </Button>
           </motion.div>
         </div>
