@@ -289,14 +289,57 @@ export default function EvaraLandingPage() {
 
         {/* Natural Ingredients Section */}
         <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6 mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter text-center mb-8 sm:mb-12">
+          Experience the Natural Difference
+        </h2>
+        <div className="grid gap-8 lg:grid-cols-2 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <Image
+              src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1734364627/Brown_Minimalist_Skincare_Ingredient_Definition_Business_Instagram_Post_z7ktfh.png"
+              alt="Natural ingredients"
+              width={500}
+              height={500}
+              className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-xl"
+            />
+          </motion.div>
+          <motion.div
+            className="flex flex-col justify-center space-y-4"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
+              At ELARA, we believe in the power of nature. Our products are
+              crafted with carefully selected natural ingredients to nourish
+              and revitalize your skin. Experience the difference of truly
+              natural skincare that works in harmony with your body's
+              natural processes.
+            </p>
+            <Button
+              className="w-fit transition-transform hover:scale-105 bg-black text-white hover:bg-gray-800 text-sm sm:text-base"
+              asChild
+            >
+              <Link href="/our-story">Discover Our Ingredients</Link>
+            </Button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+        {/* <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6 mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tighter text-center mb-8 sm:mb-12">
               Experience the Natural Difference
             </h2>
             <div className="grid gap-8 lg:grid-cols-2 items-center">
               <motion.img
-              src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1734364627/Brown_Minimalist_Skincare_Ingredient_Definition_Business_Instagram_Post_z7ktfh.png"
-                // src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1733253404/ingre_xi1p3j.png"
+                src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1733253404/ingre_xi1p3j.png"
                 alt="Natural ingredients"
                 className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-xl"
                 initial={{ opacity: 0, y: 50 }}
@@ -327,7 +370,7 @@ export default function EvaraLandingPage() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {!isReferralRewarded && user && (
           <div className="fixed bottom-4 left-4 z-50">
