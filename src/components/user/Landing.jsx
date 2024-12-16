@@ -295,7 +295,8 @@ export default function EvaraLandingPage() {
             </h2>
             <div className="grid gap-8 lg:grid-cols-2 items-center">
               <motion.img
-                src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1733253404/ingre_xi1p3j.png"
+              src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1734364627/Brown_Minimalist_Skincare_Ingredient_Definition_Business_Instagram_Post_z7ktfh.png"
+                // src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1733253404/ingre_xi1p3j.png"
                 alt="Natural ingredients"
                 className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-xl"
                 initial={{ opacity: 0, y: 50 }}
