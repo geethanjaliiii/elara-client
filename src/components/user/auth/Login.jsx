@@ -56,107 +56,201 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <Toaster />
-      <main className="container sm:py-16 mx-auto px-4 sm:mt-8 lg:px-11 py-8 md:py-12 flex flex-col md:flex-row items-center justify-center">
-        <div
-          className="md:w-1/4 hidden md:block bg-cover bg-center h-full rounded-lg shadow-lg"
-          style={{
-            backgroundImage: "url('/images/login.jpg')",
-            height: "600px",
-            width: "50%",
-          }}
-        />
-        <div className="md:w-3/4 md:pl-12 w-full max-w-md ml-3">
-          <h2 className="text-3xl font-semibold mb-6">Login to your account</h2>
-          {error && (
-            <div className="mt-3 text-base text-center text-red-600">
-              {error}
-            </div>
-          )}
-          <Formik
-            initialValues={{ email: "", password: "" }}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            {({ isSubmitting }) => (
-              <Form className="space-y-4">
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Field
-                    as={Input}
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                </div>
-                <div className="space-y-2 relative">
-                  <div className="flex items-center justify-between">
-                    <Label htmlFor="password">Password</Label>
-                    <Link
-                      className="text-sm hover:text-blue-900"
-                      to="/forget-password"
-                    >
-                      forget password?
-                    </Link>
-                  </div>
-
-                  <Field
-                    as={Input}
-                    type={showPassword?'text':"password"}
-                    id="password"
-                    name="password"
-                    placeholder="Enter password"
-                  />
-                  <ErrorMessage
-                    name="password"
-                    component="div"
-                    className="text-red-500 text-sm"
-                  />
-                  {/* Eye icon for toggling visibility */}
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 pt-2 transform -translate-y-1/2 text-gray-400  "
-                  >
-                   
-                    {showPassword ? <EyeIcon/> :<EyeOff/>}
-                  </button>
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Logging in..." : "Login"}
-                </Button>
-              </Form>
-            )}
-          </Formik>
-
-          <div className="mt-4">
-            <GoogleAuth />
+    <div className="w-full max-w-md ">
+  
+    <Toaster />
+  
+      
+        <h2 className="text-3xl font-semibold mb-6">Login to your account</h2>
+        {error && (
+          <div className="mt-3 text-base text-center text-red-600">
+            {error}
           </div>
-          <p className="mt-4 text-center text-sm text-muted-foreground">
-            Don't have an account?{" "}
-            <Link
-              to="/signup"
-              className="font-medium text-primary hover:underline"
-            >
-              Sign up
-            </Link>
-          </p>
+        )}
+        <Formik
+          initialValues={{ email: "", password: "" }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ isSubmitting }) => (
+            <Form className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Field
+                  as={Input}
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+              </div>
+              <div className="space-y-2 relative">
+                <div className="flex items-center justify-between">
+                  <Label htmlFor="password">Password</Label>
+                  <Link
+                    className="text-sm hover:text-blue-900"
+                    to="/forget-password"
+                  >
+                    forget password?
+                  </Link>
+                </div>
+
+                <Field
+                  as={Input}
+                  type={showPassword?'text':"password"}
+                  id="password"
+                  name="password"
+                  placeholder="Enter password"
+                />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="text-red-500 text-sm"
+                />
+                {/* Eye icon for toggling visibility */}
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 pt-2 transform -translate-y-1/2 text-gray-400  "
+                >
+                 
+                  {showPassword ? <EyeIcon/> :<EyeOff/>}
+                </button>
+              </div>
+              <Button
+                type="submit"
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Logging in..." : "Login"}
+              </Button>
+            </Form>
+          )}
+        </Formik>
+
+        <div className="mt-4">
+          <GoogleAuth />
         </div>
-      </main>
-      <Footer />
-    </div>
+        <p className="mt-4 text-center text-sm text-muted-foreground">
+          Don't have an account?{" "}
+          <Link
+            to="/signup"
+            className="font-medium text-primary hover:underline"
+          >
+            Sign up
+          </Link>
+        </p>
+      
+    
+   
+  </div>
+
+    // <div className="min-h-screen bg-background text-foreground">
+    //   <Navbar />
+    //   <Toaster />
+    //   <main className="container sm:py-16 mx-auto px-4 sm:mt-8 lg:px-11 py-8 md:py-12 flex flex-col md:flex-row items-center justify-center">
+    //     <div
+    //       className="md:w-1/4 hidden md:block bg-cover bg-center h-full rounded-lg shadow-lg"
+    //       style={{
+    //         backgroundImage: "url('/images/login.jpg')",
+    //         height: "600px",
+    //         width: "50%",
+    //       }}
+    //     />
+    //     <div className="md:w-3/4 md:pl-12 w-full max-w-md ml-3">
+    //       <h2 className="text-3xl font-semibold mb-6">Login to your account</h2>
+    //       {error && (
+    //         <div className="mt-3 text-base text-center text-red-600">
+    //           {error}
+    //         </div>
+    //       )}
+    //       <Formik
+    //         initialValues={{ email: "", password: "" }}
+    //         validationSchema={validationSchema}
+    //         onSubmit={handleSubmit}
+    //       >
+    //         {({ isSubmitting }) => (
+    //           <Form className="space-y-4">
+    //             <div className="space-y-2">
+    //               <Label htmlFor="email">Email</Label>
+    //               <Field
+    //                 as={Input}
+    //                 type="email"
+    //                 id="email"
+    //                 name="email"
+    //                 placeholder="Enter your email"
+    //               />
+    //               <ErrorMessage
+    //                 name="email"
+    //                 component="div"
+    //                 className="text-red-500 text-sm"
+    //               />
+    //             </div>
+    //             <div className="space-y-2 relative">
+    //               <div className="flex items-center justify-between">
+    //                 <Label htmlFor="password">Password</Label>
+    //                 <Link
+    //                   className="text-sm hover:text-blue-900"
+    //                   to="/forget-password"
+    //                 >
+    //                   forget password?
+    //                 </Link>
+    //               </div>
+
+    //               <Field
+    //                 as={Input}
+    //                 type={showPassword?'text':"password"}
+    //                 id="password"
+    //                 name="password"
+    //                 placeholder="Enter password"
+    //               />
+    //               <ErrorMessage
+    //                 name="password"
+    //                 component="div"
+    //                 className="text-red-500 text-sm"
+    //               />
+    //               {/* Eye icon for toggling visibility */}
+    //               <button
+    //                 type="button"
+    //                 onClick={() => setShowPassword(!showPassword)}
+    //                 className="absolute right-3 top-1/2 pt-2 transform -translate-y-1/2 text-gray-400  "
+    //               >
+                   
+    //                 {showPassword ? <EyeIcon/> :<EyeOff/>}
+    //               </button>
+    //             </div>
+    //             <Button
+    //               type="submit"
+    //               className="w-full"
+    //               disabled={isSubmitting}
+    //             >
+    //               {isSubmitting ? "Logging in..." : "Login"}
+    //             </Button>
+    //           </Form>
+    //         )}
+    //       </Formik>
+
+    //       <div className="mt-4">
+    //         <GoogleAuth />
+    //       </div>
+    //       <p className="mt-4 text-center text-sm text-muted-foreground">
+    //         Don't have an account?{" "}
+    //         <Link
+    //           to="/signup"
+    //           className="font-medium text-primary hover:underline"
+    //         >
+    //           Sign up
+    //         </Link>
+    //       </p>
+    //     </div>
+    //   </main>
+    //   <Footer />
+    // </div>
   );
 };
 
