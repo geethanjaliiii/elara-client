@@ -300,7 +300,7 @@ export default function EvaraLandingPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Image
+            <img
               src="https://res.cloudinary.com/dby2ebbkr/image/upload/v1734365539/Brown_Minimalist_Skincare_Ingredient_Definition_Business_Instagram_Post_1_rzdhi6.png"
               alt="Natural ingredients"
               width={500}
