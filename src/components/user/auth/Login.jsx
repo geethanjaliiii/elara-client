@@ -61,7 +61,7 @@ const Login = () => {
     <Toaster />
   
       
-        <h2 className="text-3xl font-semibold mb-6">Login to your account</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-center">Login to your account</h2>
         {error && (
           <div className="mt-3 text-base text-center text-red-600">
             {error}
