@@ -15,7 +15,7 @@ export default function VisitUs() {
     },
     {
       city: "Coimbatore",
-      address: "Deyga organics SF 468, Avinashi Road, Peelamedu, Coimbatore - 641004",
+      address: "ELARA Skincare SF 468, Avinashi Road, Peelamedu, Coimbatore - 641004",
       phone: "95143 45599",
       image: "https://deyga.in/cdn/shop/files/01_1_8fc8d7a6-e3b3-4b87-b5f6-9b5798631ef4.jpg?v=1700125242&width=750",
       icon: (
