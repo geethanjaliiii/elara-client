@@ -15,6 +15,7 @@ import FounderHero from "./landing/Founder";
 import VisitUs from "./landing/VisitUs";
 import { Badge } from "../ui/badge";
 import { Gift } from "lucide-react";
+import Skeleton from "react-loading-skeleton";
 
 export default function EvaraLandingPage() {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export default function EvaraLandingPage() {
   const isReferralRewarded = user ? user?.isReferralRewarded : null;
   const [currentBanner, setCurrentBanner] = useState(0);
 
-  const { data: banners } = useQuery({
+  const { data: banners ,isLoading:bannerLoading} = useQuery({
     queryKey: ["userBanners"],
     queryFn: fetchBanners,
   });
@@ -75,7 +76,77 @@ export default function EvaraLandingPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-1 ">
-        {banners?.length > 0 && (
+        
+          <section className="relative h-[450px] sm:h-[500px] md:h-[630px] overflow-hidden">
+            {bannerLoading?(<Skeleton type='banners'/>):(
+              banners?.length>0 && (
+                <> <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentBanner}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0"
+                >
+                  <img
+                    src={banners[currentBanner].image}
+                    alt={banners[currentBanner].title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                    <div className="text-center max-w-3xl px-4">
+                      <motion.h1
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
+                      >
+                        {banners[currentBanner].title}
+                      </motion.h1>
+                      <motion.p
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.4 }}
+                        className="text-lg sm:text-xl md:text-2xl text-white mb-6 font-light"
+                      >
+                        {banners[currentBanner].content}
+                      </motion.p>
+                      <motion.div
+                        initial={{ y: 20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.6 }}
+                      >
+                        <Button
+                          className="bg-white text-black hover:bg-gray-200 transition-colors duration-300 text-base sm:text-lg py-2 px-4 sm:px-6"
+                          onClick={() => navigate("/shop")}
+                        >
+                          Discover ELARA
+                        </Button>
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+                {banners.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`w-3 h-3 rounded-full ${
+                      index === currentBanner ? "bg-white" : "bg-gray-400"
+                    }`}
+                    onClick={() => setCurrentBanner(index)}
+                  />
+                ))}
+              </div>
+              </>
+              )
+            )}
+           
+          </section>
+       
+
+{/* {banners?.length > 0 && (
           <section className="relative h-[450px] sm:h-[500px] md:h-[630px] overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
@@ -137,7 +208,7 @@ export default function EvaraLandingPage() {
               ))}
             </div>
           </section>
-        )}
+        )} */}
 
         {/* Bestsellers Section */}
         {bestsellers?.length == 4 && bestsellers?.length > 0 && (
