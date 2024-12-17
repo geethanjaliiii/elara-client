@@ -13,7 +13,7 @@ export default function NoProducts() {
           We couldn't find any products matching your criteria.
         </p>
         <div className="mt-6 flex justify-center space-x-4">
-          <Button onClick={() => navigate("/shop")} variant="outline">
+          <Button onClick={() => window.location.reload()} variant="outline">
             <RefreshCw className="mr-2 h-4 w-4" />
             Refresh Page
           </Button>
