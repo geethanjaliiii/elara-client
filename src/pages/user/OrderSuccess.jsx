@@ -12,7 +12,7 @@ import {
   Package,
   ShoppingCart,
   Timer,
-  XCircle 
+  XCircle,
 } from "lucide-react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { formatDeliveryDate, formatOrderDate } from "@/utils/dateFormatting";
@@ -65,7 +65,7 @@ export default function OrderSuccess() {
                 {data?.paymentStatus == "Failed" ? (
                   <>
                     <div className="mb-4 rounded-full bg-foreground/5 p-3 ">
-                      <XCircle  className="h-14 w-14 text-red-500" />
+                      <XCircle className="h-14 w-14 text-red-500" />
                     </div>
                     <h1 className="mb-2 text-2xl font-semibold">
                       Payment Failed!
@@ -147,11 +147,20 @@ export default function OrderSuccess() {
               </div>
 
               {/* Action Buttons */}
-              <div className="mt-6 grid grid-cols-2 gap-4">
+              {/* <div className="mt-6 grid grid-cols-2 gap-4">
                 <Button variant="outline" asChild>
                   <Link to={`/orders/${orderId}`}>View Order</Link>
                 </Button>
                 <Button asChild>
+                  <Link to="/shop">Continue Shopping</Link>
+                </Button>
+              </div> */}
+              {/* Action Buttons */}
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Button variant="outline" asChild className="w-full">
+                  <Link to={`/orders/${orderId}`}>View Order</Link>
+                </Button>
+                <Button asChild className="w-full">
                   <Link to="/shop">Continue Shopping</Link>
                 </Button>
               </div>
